@@ -7,7 +7,6 @@ import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
   Ecommerce,
   Orders,
-  Calendar,
   Employees,
   Stacked,
   Customers,
@@ -17,6 +16,7 @@ import {
   Financial,
 } from "./pages";
 import { useStateContext } from "./contexts/ContextProvider";
+
 const App = () => {
   const {
     activeMenu,
@@ -25,6 +25,7 @@ const App = () => {
     currentColor,
     currentMode,
   } = useStateContext();
+
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
@@ -61,6 +62,7 @@ const App = () => {
               <Navbar />
               {/* 테마 적용*/}
             </div>
+
             <div>
               {themeSettings && <ThemeSettings />}
 
@@ -75,7 +77,6 @@ const App = () => {
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/customers" element={<Customers />} />
                 {/* Apps */}
-                <Route path="/calendar" element={<Calendar />} />
                 {/* Charts */}
                 <Route path="/line" element={<Line />} />
                 <Route path="/area" element={<Area />} />
